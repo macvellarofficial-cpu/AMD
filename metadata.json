@@ -1,0 +1,6 @@
+{
+  "name": "Afrimex Mineral Dealers",
+  "description": "Licensed Ugandan precious metals company specializing in sourcing, buying, selling, and exporting high-purity African Gold.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

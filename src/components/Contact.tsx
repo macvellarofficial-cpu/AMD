@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, ShieldCheck, Calculator, ArrowUpRight, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ShieldCheck, Calculator, ArrowUpRight, Send, CheckCircle, Users } from 'lucide-react';
 
 interface ContactProps {
   initialProductName?: string;
@@ -77,35 +77,43 @@ export default function Contact({ initialProductName = '' }: ContactProps) {
                 <div className="flex gap-3.5 items-start">
                   <MapPin className="w-5 h-5 text-gold-light shrink-0" />
                   <div>
-                    <span className="font-bold text-white block">Corporate Office & Vaults:</span>
-                    <span className="block mt-0.5">Plot 12-14, Kampala Road, Regency Plaza, Central Division, Kampala, Uganda</span>
+                    <span className="font-bold text-white block">Office 1 (Corporate Hub & Assaying):</span>
+                    <span className="block mt-0.5">Plot 01, Crested Towers, Nakaseero Division, Kampala City, Uganda</span>
+                  </div>
+                </div>
+
+                <div className="flex gap-3.5 items-start">
+                  <MapPin className="w-5 h-5 text-gold-light shrink-0" />
+                  <div>
+                    <span className="font-bold text-white block">Office 2 (Smelting & Secure Storage):</span>
+                    <span className="block mt-0.5">Kitala, Kampala-Entebbe Road, Wakiso District, Central Uganda</span>
                   </div>
                 </div>
 
                 <div className="flex gap-3.5 items-start">
                   <Mail className="w-5 h-5 text-gold-light shrink-0" />
                   <div>
-                    <span className="font-bold text-white block">Corporate Communications:</span>
-                    <span className="block mt-0.5 font-mono text-xs">trade@afrimex.co.ug</span>
-                    <span className="block text-[10px] text-slate-400 font-mono">compliance@afrimex.co.ug</span>
+                    <span className="font-bold text-white block">Official Contact Email:</span>
+                    <a href="mailto:info@afrimexmineraldealers.com" className="block mt-0.5 font-mono text-xs text-gold-light hover:underline">info@afrimexmineraldealers.com</a>
                   </div>
                 </div>
 
                 <div className="flex gap-3.5 items-start">
                   <Phone className="w-5 h-5 text-gold-light shrink-0" />
                   <div>
-                    <span className="font-bold text-white block">International Trade Desk:</span>
-                    <span className="block mt-0.5 font-mono text-xs">+256 414 789 123</span>
-                    <span className="block text-[10px] text-teal-light font-bold">WhatsApp: Support Available</span>
+                    <span className="font-bold text-white block">Official Trade Desk (WhatsApp):</span>
+                    <a href="https://wa.me/256793932028?text=Hello%20Afrimex%20Mineral%20Dealers%2C%20I%20am%20inquiring%20about%20gold" target="_blank" rel="noopener noreferrer" className="block mt-0.5 font-mono text-xs text-emerald-400 hover:underline">+256 793 932 028</a>
+                    <span className="block text-[10px] text-teal-light font-bold">Secure direct message support active</span>
                   </div>
                 </div>
 
-                <div className="flex gap-3.5 items-start">
-                  <Clock className="w-5 h-5 text-gold-light shrink-0" />
+                <div className="flex gap-3.5 items-start pt-2 border-t border-slate-800">
+                  <Users className="w-5 h-5 text-gold-light shrink-0" />
                   <div>
-                    <span className="font-bold text-white block">Office Operating Hours:</span>
-                    <span className="block mt-0.5">Monday – Friday: 08:00 – 17:00 (EAT, GMT+3)</span>
-                    <span className="block text-[10px] text-slate-400">Emergency air shipment desk operates 24/7</span>
+                    <span className="font-bold text-white block">Director Contact Desk:</span>
+                    <span className="block text-xs mt-0.5 text-slate-300">Ssenyonga Hakimu (Director of Trade)</span>
+                    <a href="mailto:sales@afrimexmineraldealers.com" className="block mt-0.5 font-mono text-xs text-gold-light hover:underline">sales@afrimexmineraldealers.com</a>
+                    <a href="https://ug.linkedin.com/in/ssenyonga-hakimu-a217b5370" target="_blank" rel="noopener noreferrer" className="block mt-1 text-[10px] text-teal-light hover:underline font-mono font-bold">View LinkedIn Profile</a>
                   </div>
                 </div>
               </div>

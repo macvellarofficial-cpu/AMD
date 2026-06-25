@@ -242,7 +242,7 @@ export default function Procedure() {
 
             <div className="pt-8 border-t border-slate-800">
               <span className="text-[10px] font-mono text-slate-400 uppercase block">Trade Inquiries</span>
-              <span className="text-sm font-bold text-white block mt-1">compliance@afrimex.co.ug</span>
+              <span className="text-sm font-bold text-white block mt-1">info@afrimexmineraldealers.com</span>
             </div>
 
           </div>

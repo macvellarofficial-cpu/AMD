@@ -60,7 +60,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               </div>
             </div>
             <p className="text-slate-400 text-xs sm:text-sm max-w-md leading-relaxed">
-              Licensed Ugandan precious metals dealer specializing in ethical sourcing, smelting, and fully-insured international air cargo export. Plot 12-14, Kampala Road, Uganda.
+              Licensed Ugandan precious metals dealer specializing in ethical sourcing, smelting, and fully-insured international air cargo export. Office 1: Plot 01, Crested Towers, Kampala. Office 2: Kitala, Kampala-Entebbe Road, Uganda.
             </p>
           </div>
 
@@ -137,7 +137,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <span>REGULATORY & COMPLIANCE STATEMENT:</span>
             </div>
             <p>
-              Afrimex Mineral Dealers Limited operates in complete accordance with the Uganda Mining Act of 2022. Sourcing records align 100% with the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas. Outbound air cargo is cleared through the Uganda Revenue Authority and Directorate of Geological Survey and Mines.
+              Afrimex Mineral Dealers Limited (URSB Reg: 80034313511703, URA TIN: 105686028, Mineral Dealers License: MDL20260633) operates in complete accordance with the Uganda Mining Act of 2022. Sourcing records align 100% with the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas. Outbound air cargo is cleared through the Uganda Revenue Authority and Directorate of Geological Survey and Mines.
             </p>
           </div>
 

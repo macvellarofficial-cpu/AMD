@@ -379,13 +379,13 @@ export const FAQS: FAQItem[] = [
     id: 'faq-1',
     category: 'Licensing & Credentials',
     question: 'Is Afrimex Mineral Dealers Limited a fully licensed company?',
-    answer: 'Yes, Afrimex Mineral Dealers Limited is a fully registered private limited liability company in Uganda, licensed by the Ministry of Energy and Mineral Development (MEMD) under the Mining Act. We hold active mineral dealer and export permits, allowing us legally to source, melt, assay, store, and export precious metals internationally.'
+    answer: 'Yes, Afrimex Mineral Dealers Limited is a fully registered private limited liability company in Uganda, licensed by the Ministry of Energy and Mineral Development (MEMD) under the Mining Act with Mineral Dealers License MDL20260633. We hold active mineral dealer and export permits, allowing us legally to source, melt, assay, store, and export precious metals internationally.'
   },
   {
     id: 'faq-2',
     category: 'Licensing & Credentials',
     question: 'How can an international buyer verify Afrimex’s licenses?',
-    answer: 'International buyers can verify our corporate status and licensing credentials through the Uganda Registration Services Bureau (URSB) using our company registration number, and by cross-referencing our active export permits with the Directorate of Geological Survey and Mines under the Ministry of Energy and Mineral Development.'
+    answer: 'International buyers can verify our corporate status and licensing credentials through the Uganda Registration Services Bureau (URSB) using our official URSB Certificate of Incorporation Registration number: 80034313511703, and by cross-referencing our active export permits (Mineral Dealers License MDL20260633) with the Directorate of Geological Survey and Mines under the Ministry of Energy and Mineral Development.'
   },
   {
     id: 'faq-3',
@@ -397,13 +397,13 @@ export const FAQS: FAQItem[] = [
     id: 'faq-4',
     category: 'Licensing & Credentials',
     question: 'What is your corporate tax and compliance standing?',
-    answer: 'Afrimex holds an active Tax Identification Number (TIN) with the Uganda Revenue Authority (URA). We are in excellent standing, maintaining up-to-date income tax clearances, withholding tax records, and customs declarations.'
+    answer: 'Afrimex holds an active Tax Identification Number (TIN) with the Uganda Revenue Authority (URA), which is TIN: 105686028. We are in excellent standing, maintaining up-to-date income tax clearances, withholding tax records, and customs declarations.'
   },
   {
     id: 'faq-5',
     category: 'Licensing & Credentials',
     question: 'Where is the corporate headquarters of Afrimex located?',
-    answer: 'Our main offices, smelting facility, and assay laboratory are located in Kampala, Uganda’s capital city. We operate in a highly secure, modern facility equipped with advanced security gates, armed personnel, and 24/7 CCTV surveillance.'
+    answer: 'We operate two primary facilities in Uganda. Office 1 (Corporate Office & Assaying): Plot 01, Crested Towers, Nakaseero Division, Kampala City, Uganda. Office 2 (Smelting & Secure Storage): Kitala, Kampala-Entebbe Road, Wakiso District, Central Uganda. Both facilities are highly secure, equipped with advanced security gates, armed personnel, and 24/7 CCTV surveillance.'
   },
   {
     id: 'faq-6',

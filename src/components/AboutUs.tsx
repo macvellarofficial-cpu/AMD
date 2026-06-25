@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Briefcase, Eye, ShieldCheck, Target, Users } from 'lucide-react';
+import { Award, Briefcase, Eye, ShieldCheck, Target, Users, Linkedin, Mail } from 'lucide-react';
 
 export default function AboutUs() {
   const values = [
@@ -44,6 +44,14 @@ export default function AboutUs() {
   ];
 
   const leaders = [
+    {
+      name: 'Ssenyonga Hakimu',
+      role: 'Director of International Trade',
+      desc: 'Supervises global physical precious metals sales, corporate trade desk operations, sovereign allocations, and strategic escrow accounts.',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=300&q=80',
+      linkedin: 'https://ug.linkedin.com/in/ssenyonga-hakimu-a217b5370',
+      email: 'sales@afrimexmineraldealers.com'
+    },
     {
       name: 'Andrew S. Kabunga',
       role: 'Chief Executive Officer',
@@ -144,26 +152,63 @@ export default function AboutUs() {
         {/* Executive Board */}
         <div>
           <h3 className="text-center font-display font-bold text-slate-900 text-2xl mb-12">Executive Leadership</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {leaders.map((leader, idx) => (
-              <div key={idx} className="glass-panel rounded-2xl overflow-hidden border border-slate-200/50 hover:shadow-md transition-all duration-300">
-                <div className="aspect-square w-full relative bg-slate-100">
-                  <img
-                    src={leader.image}
-                    alt={leader.name}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover filter brightness-95 object-top"
-                  />
+              <div key={idx} className="glass-panel rounded-2xl overflow-hidden border border-slate-200/50 hover:shadow-md flex flex-col justify-between transition-all duration-300">
+                <div>
+                  <div className="aspect-square w-full relative bg-slate-100">
+                    <img
+                      src={leader.image}
+                      alt={leader.name}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover filter brightness-95 object-top"
+                    />
+                  </div>
+                  <div className="p-6 pb-2">
+                    <h4 className="font-display font-bold text-slate-900 text-base">{leader.name}</h4>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-teal-dark font-bold block mt-0.5">
+                      {leader.role}
+                    </span>
+                    <p className="text-slate-500 text-xs sm:text-sm mt-3 leading-relaxed">
+                      {leader.desc}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="font-display font-bold text-slate-900 text-base">{leader.name}</h4>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-teal-dark font-bold block mt-0.5">
-                    {leader.role}
-                  </span>
-                  <p className="text-slate-500 text-xs sm:text-sm mt-3 leading-relaxed">
-                    {leader.desc}
-                  </p>
+                
+                {/* Contact Links Footer for Leader */}
+                <div className="p-6 pt-0">
+                  {('linkedin' in leader || 'email' in leader) ? (
+                    <div className="flex items-center gap-4 pt-4 border-t border-slate-100">
+                      {leader.linkedin && (
+                        <a
+                          href={leader.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-400 hover:text-teal-dark transition-colors flex items-center gap-1.5 text-[10px] font-mono font-bold"
+                          title="View LinkedIn Profile"
+                        >
+                          <Linkedin className="w-3.5 h-3.5 text-teal-dark" />
+                          <span>LinkedIn</span>
+                        </a>
+                      )}
+                      {leader.email && (
+                        <a
+                          href={`mailto:${leader.email}`}
+                          className="text-slate-400 hover:text-gold-dark transition-colors flex items-center gap-1.5 text-[10px] font-mono font-bold ml-auto"
+                          title="Send Email"
+                        >
+                          <Mail className="w-3.5 h-3.5 text-gold-dark" />
+                          <span className="truncate max-w-[80px]" title={leader.email}>Email</span>
+                        </a>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="pt-4 border-t border-slate-100/50 text-[10px] font-mono text-slate-400 italic">
+                      Executive Desk
+                    </div>
+                  )}
                 </div>
+
               </div>
             ))}
           </div>

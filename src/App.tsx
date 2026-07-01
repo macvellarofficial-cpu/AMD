@@ -12,24 +12,62 @@ import Blog from './components/Blog';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ProductPage from './components/ProductPage';
+import GoldPriceWidget from './components/GoldPriceWidget';
+import { PRODUCTS } from './data';
 import { ArrowUp, Download, CheckCircle2, X } from 'lucide-react';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('hero');
+  const [currentProductId, setCurrentProductId] = useState<string | null>(null);
   const [selectedProductInquiry, setSelectedProductInquiry] = useState('');
   const [notification, setNotification] = useState<string | null>(null);
 
+  // Hash Routing
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash && hash.startsWith('#/')) {
+        const id = hash.replace('#/', '');
+        const matched = PRODUCTS.find(p => p.id === id);
+        if (matched) {
+          setCurrentProductId(id);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+      }
+      setCurrentProductId(null);
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   // Smooth scroll logic
   const handleNavigate = (sectionId: string) => {
-    const targetElement = document.getElementById(sectionId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setActiveSection(sectionId);
+    if (currentProductId) {
+      window.location.hash = ''; // clear hash, goes back to home
+      setTimeout(() => {
+        const targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setActiveSection(sectionId);
+        }
+      }, 100);
+    } else {
+      const targetElement = document.getElementById(sectionId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setActiveSection(sectionId);
+      }
     }
   };
 
-  // Tracking which section is active based on scroll
+  // Tracking which section is active based on scroll (only if on home page)
   useEffect(() => {
+    if (currentProductId) return;
+
     const handleScroll = () => {
       const sections = ['hero', 'about', 'products', 'services', 'procedure', 'documents', 'sourcing', 'markets', 'blog', 'faq', 'contact'];
       const scrollPosition = window.scrollY + 120; // offset for nav height
@@ -49,7 +87,7 @@ export default function App() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [currentProductId]);
 
   const handleInquireBatch = (productName: string) => {
     setSelectedProductInquiry(productName);
@@ -122,44 +160,58 @@ export default function App() {
       </a>
 
       {/* Primary Navigation */}
-      <Navbar onNavigate={handleNavigate} activeSection={activeSection} />
+      <Navbar onNavigate={handleNavigate} activeSection={currentProductId ? 'products' : activeSection} />
 
       {/* Segmented Modules Grid */}
       <main>
-        
-        {/* Module: Hero Area */}
-        <Hero onNavigate={handleNavigate} onDownloadProfile={handleDownloadProfile} />
+        {currentProductId ? (
+          /* Module: Dedicated Precious Metal Subpage */
+          <ProductPage 
+            product={PRODUCTS.find(p => p.id === currentProductId)!} 
+            onBack={() => { window.location.hash = ''; }} 
+          />
+        ) : (
+          /* Standard Multi-Section Landing Page Layout */
+          <>
+            {/* Module: Hero Area */}
+            <Hero onNavigate={handleNavigate} onDownloadProfile={handleDownloadProfile} />
 
-        {/* Module: Corporate Story & Timeline */}
-        <AboutUs />
+            {/* Module: Real-Time Live Trading Ticker (Super Luxury Float) */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14 relative z-30 mb-20">
+              <GoldPriceWidget />
+            </div>
 
-        {/* Module: Precious Metal Products Catalog */}
-        <Products onInquire={handleInquireBatch} />
+            {/* Module: Corporate Story & Timeline */}
+            <AboutUs />
 
-        {/* Module: Commercial Services Suite */}
-        <Services />
+            {/* Module: Precious Metal Products Catalog */}
+            <Products onInquire={handleInquireBatch} />
 
-        {/* Module: 10-Step Buying Procedures */}
-        <Procedure />
+            {/* Module: Commercial Services Suite */}
+            <Services />
 
-        {/* Module: Export Compliance Suite */}
-        <ExportDocuments />
+            {/* Module: 10-Step Buying Procedures */}
+            <Procedure />
 
-        {/* Module: ESG, Audit & Ethical Sourcing */}
-        <Sourcing />
+            {/* Module: Export Compliance Suite */}
+            <ExportDocuments />
 
-        {/* Module: Interactive Regional Transit Map */}
-        <GlobalMarkets />
+            {/* Module: ESG, Audit & Ethical Sourcing */}
+            <Sourcing />
 
-        {/* Module: Knowledge Hub & Guides */}
-        <Blog />
+            {/* Module: Interactive Regional Transit Map */}
+            <GlobalMarkets />
 
-        {/* Module: Searchable help database (40 FAQs) */}
-        <FAQ />
+            {/* Module: Knowledge Hub & Guides */}
+            <Blog />
 
-        {/* Module: KYC Onboarding & Sourcing Calculator */}
-        <Contact initialProductName={selectedProductInquiry} />
+            {/* Module: Searchable help database (40 FAQs) */}
+            <FAQ />
 
+            {/* Module: KYC Onboarding & Sourcing Calculator */}
+            <Contact initialProductName={selectedProductInquiry} />
+          </>
+        )}
       </main>
 
       {/* Corporate Institutional Footer */}

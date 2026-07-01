@@ -21,6 +21,25 @@ export const PRODUCTS: Product[] = [
     ]
   },
   {
+    id: 'gold-dore-bars',
+    name: 'Premium Gold Doré Bars',
+    description: 'Semi-refined gold alloy bars smelted directly in our Kampala facility. These bars contain high concentrations of pure gold alongside trace silver and copper, ideal for refinery delivery.',
+    image: 'https://images.unsplash.com/photo-1535320903710-d993d3d77d29?auto=format&fit=crop&w=600&q=80',
+    specs: {
+      purity: 'Typically ranges from 92% to 95% (22 Karat to 23 Karat equivalent)',
+      weight: 'Standard smelter pours in 1 kg, 3 kg, and 5 kg bars',
+      origin: 'Directly sourced from licensed gold cooperative miners in East Africa',
+      form: 'Rough cast doré bars with certified smelter melt stamps',
+      packaging: 'Secured inside heavy steel transit canisters with dual custody seals'
+    },
+    features: [
+      'Direct primary melt with uniform metallic consistency',
+      'Accompanying local fire assay split-sample reports',
+      'Sourced strictly in accordance with OECD Sourcing Guidelines',
+      'Highly optimized customs clearing rates for direct international refinery delivery'
+    ]
+  },
+  {
     id: 'gold-nuggets',
     name: 'Natural Premium Gold Nuggets',
     description: 'High-purity alluvial gold nuggets collected from rich riverbeds and geological formations in Uganda. Favored by collectors and specialty jewelers for their raw natural aesthetic.',
@@ -59,7 +78,7 @@ export const PRODUCTS: Product[] = [
     ]
   },
   {
-    id: 'silver-metals',
+    id: 'silver',
     name: 'Refined Industrial & Investment Silver',
     description: 'High-purity silver bars and granules obtained as a natural co-product of gold refining, processed to international standards for electronic, jewelry, and investment sectors.',
     image: 'https://images.unsplash.com/photo-1515564895181-37fa21a0e3a5?auto=format&fit=crop&w=600&q=80',
